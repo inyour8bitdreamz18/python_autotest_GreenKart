@@ -18,9 +18,9 @@ class AppDynamicsJob(unittest.TestCase):
     def test_app_dynamics_job(self):
         wd = self.wd
         wd.get("https://rahulshettyacademy.com/seleniumPractise/#/")
-        wd.find_element_by_xpath("//div[3]/button").click()
-        wd.find_element_by_xpath("//div[2]/div[3]/button").click()
-        wd.find_element_by_xpath("//div[3]/div[3]/button").click()
+        wd.find_element(By.XPATH,"//div[3]/button").click()
+        wd.find_element(By.XPATH,"//div[2]/div[3]/button").click()
+        wd.find_element(By.XPATH,"//div[3]/div[3]/button").click()
     
     def is_element_present(self, how, what):
         try: self.wd.find_element(by=how, value=what)
