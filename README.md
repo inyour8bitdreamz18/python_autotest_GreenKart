@@ -1,1 +1,1 @@
-# python_autotest_GreenKart
+# Python Autotest for GreenKart project
