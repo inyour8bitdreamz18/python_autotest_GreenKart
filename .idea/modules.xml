@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/python_autotest_GreenKart.iml" filepath="$PROJECT_DIR$/.idea/python_autotest_GreenKart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/python_autotest_teststore.iml" filepath="$PROJECT_DIR$/.idea/python_autotest_teststore.iml" />
     </modules>
   </component>
 </project>
