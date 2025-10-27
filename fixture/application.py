@@ -1,21 +1,18 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from fixture.session import SessionHelper
 
 class Application:
 
     def __init__(self):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
+        self.session = SessionHelper(self)
 
     def continue_to_use_site(self):
         wd = self.wd
         wd.find_element(By.LINK_TEXT, "Continue").click()
-
-    def log_out(self):
-        wd = self.wd
-        wd.find_element(By.XPATH,
-                        "//a[contains(@href, 'https://automationteststore.com/index.php?rt=account/logout')]").click()
 
     def confirm_registration_info(self):
         wd = self.wd
@@ -107,9 +104,27 @@ class Application:
         wd = self.wd
         wd.get("https://automationteststore.com/index.php?rt=account/login")
 
+    def open_user_page(self):
+        wd = self.wd
+        wd.get("https://automationteststore.com/index.php?rt=account/account")
+
     def open_home_page(self):
         wd = self.wd
         wd.get("https://automationteststore.com/")
+
+    def open_logout_page(self):
+        wd = self.wd
+        wd.get("https://automationteststore.com/index.php?rt=account/logout")
+
+    def add_product(self):
+        # Temporary add first product on main page
+        wd = self.wd
+        wd.find_element(By.XPATH, "//div[@id='block_frame_featured_1769']/div/div/div[2]/div[3]/a/i").click()
+
+    def open_cart(self):
+        wd = self.wd
+        wd.find_element(By.XPATH,
+            "(.//*[normalize-space(text()) and normalize-space(.)='Check Your Order'])[1]/following::span[2]").click()
 
     def destroy(self):
         self.wd.quit()
